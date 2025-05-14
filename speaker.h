@@ -18,4 +18,7 @@ class Speaker {
 
 		void setVolume(int val);
 		void play(Music music);
+		void stop();
+		void state();
+		void files();
 };

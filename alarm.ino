@@ -3,13 +3,6 @@
 #include "speaker.h"
 #include "alarm.h"
 
-/*
-#include <RTClib.h>
-RTC_DS3231 rtc;
-	DateTime now = rtc.now();
-	Serial.print(now.year(), DEC);
-*/
-
 Speaker speaker;
 Alarm alarm;
 
