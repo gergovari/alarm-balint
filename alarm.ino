@@ -1,34 +1,23 @@
 #include <Arduino.h>
 
-#include <SoftwareSerial.h>
-#include <DFRobotDFPlayerMini.h>
+#include "speaker.h"
 
+/*
 #include <RTClib.h>
-
-SoftwareSerial softwareSerial(3, 2);
-DFRobotDFPlayerMini player;
-
 RTC_DS3231 rtc;
+	DateTime now = rtc.now();
+	Serial.print(now.year(), DEC);
+*/
+
+Speaker speaker;
 
 void setup() {
 	Serial.begin(9600);
-	softwareSerial.begin(9600);
+	speaker.begin();
 
-	/*if (player.begin(softwareSerial)) {
-		Serial.println("Player ready.");
-	} else {
-		Serial.println("Player failed.");
-	}*/
-
-	player.volume(5);
+	speaker.setVolume(100);
+	speaker.play(Music::ZAMBO);
 }
 
-int i = 0;
-
 void loop() {
-	DateTime now = rtc.now();
-	Serial.print(now.year(), DEC);
-
-	player.play(2);
-	delay(100000);
 }
