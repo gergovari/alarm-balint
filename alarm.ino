@@ -3,6 +3,8 @@
 #include "speaker.h"
 #include "alarm.h"
 
+#include "input.h"
+
 /*
 #include <RTClib.h>
 RTC_DS3231 rtc;
@@ -12,6 +14,17 @@ RTC_DS3231 rtc;
 
 Speaker speaker;
 Alarm alarm;
+
+#define LEFT 6
+#define RIGHT 7
+#define OK 8
+
+ButtonConfig left(LEFT, nullptr, nullptr, nullptr);
+ButtonConfig right(RIGHT, nullptr, nullptr, nullptr);
+ButtonConfig ok(OK, nullptr, nullptr);
+ButtonConfig *btns[3] = { &left, &right, &ok };
+
+Input input(btns, 3);
 
 void playAlarm() {
 	speaker.setVolume(100);
@@ -29,5 +42,6 @@ void setup() {
 }
 
 void loop() {
+	input.tick();
 	alarm.tick();
 }
