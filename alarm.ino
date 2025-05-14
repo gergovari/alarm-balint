@@ -14,12 +14,13 @@ Speaker speaker;
 void setup() {
 	Serial.begin(9600);
 	speaker.begin();
-
+	speaker.state();
+	speaker.files();
 	speaker.setVolume(100);
 	speaker.play(Music::ZAMBO);
-	Serial.println(int(Music::ZAMBO));
 
 }
 
 void loop() {
+
 }
