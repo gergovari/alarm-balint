@@ -14,9 +14,14 @@ bool Speaker::begin() {
 
 void Speaker::setVolume(int val) {
 	// TODO
+	int vol = map(val, 0, 100, 0, 30);
+	player.volume(vol);
+
 }
 
 void Speaker::play(Music music) {
 	// TODO
 	//player.play(2);
+	player.play(int(music) + 1);
+
 }

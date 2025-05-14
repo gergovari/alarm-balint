@@ -17,6 +17,8 @@ void setup() {
 
 	speaker.setVolume(100);
 	speaker.play(Music::ZAMBO);
+	Serial.println(int(Music::ZAMBO));
+
 }
 
 void loop() {
