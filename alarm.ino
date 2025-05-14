@@ -5,26 +5,12 @@
 
 #include "input.h"
 
-/*
-#include <RTClib.h>
-RTC_DS3231 rtc;
-	DateTime now = rtc.now();
-	Serial.print(now.year(), DEC);
-*/
-
 Speaker speaker;
 Alarm alarm;
 
-#define LEFT 6
-#define RIGHT 7
-#define OK 8
-
-ButtonConfig left(LEFT, nullptr, nullptr, nullptr);
-ButtonConfig right(RIGHT, nullptr, nullptr, nullptr);
-ButtonConfig ok(OK, nullptr, nullptr);
-ButtonConfig *btns[3] = { &left, &right, &ok };
-
-Input input(btns, 3);
+void okClick() {
+	Serial.println("OK click");
+}
 
 void playAlarm() {
 	speaker.setVolume(100);
@@ -32,6 +18,17 @@ void playAlarm() {
 
 	Serial.println("Alarm playing!");
 }
+
+#define LEFT 6
+#define RIGHT 7
+#define OK 8
+
+ButtonConfig left(LEFT, nullptr, nullptr, nullptr);
+ButtonConfig right(RIGHT, nullptr, nullptr, nullptr);
+ButtonConfig ok(OK, okClick, nullptr);
+ButtonConfig *btns[3] = { &left, &right, &ok };
+
+Input input(btns, 3);
 
 void setup() {
 	Serial.begin(9600);
