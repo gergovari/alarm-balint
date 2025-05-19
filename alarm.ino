@@ -3,6 +3,16 @@
 #include "speaker.h"
 #include "alarm.h"
 
+/* TODO:
+	- input (did it work? I don't remember...)
+
+	- screen
+	- menu system
+
+	- quiz generator
+	- quiz menu
+*/
+
 Speaker speaker;
 Alarm alarm;
 
