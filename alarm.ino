@@ -4,6 +4,7 @@
 #include "alarm.h"
 
 #include "input.h"
+#include "input_conf.h"
 
 Speaker speaker;
 Alarm alarm;
@@ -18,10 +19,6 @@ void playAlarm() {
 
 	Serial.println("Alarm playing!");
 }
-
-#define LEFT 6
-#define RIGHT 7
-#define OK 8
 
 ButtonConfig left(LEFT, nullptr, nullptr, nullptr);
 ButtonConfig right(RIGHT, nullptr, nullptr, nullptr);
