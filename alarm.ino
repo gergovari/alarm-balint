@@ -22,6 +22,12 @@ Alarm alarm;
 void okClick() {
 	Serial.println("OK click");
 }
+void leftClick() {
+	Serial.println("left click");
+}
+void rightClick() {
+	Serial.println("right click");
+}
 
 void playAlarm() {
 	speaker.setVolume(100);
