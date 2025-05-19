@@ -13,10 +13,25 @@ bool Speaker::begin() {
 }
 
 void Speaker::setVolume(int val) {
-	// TODO
+	int vol = map(val, 0, 100, 0, 30);
+	player.volume(vol);
+
 }
 
 void Speaker::play(Music music) {
-	// TODO
-	//player.play(2);
+	player.loop(int(music) + 1);
+
+}
+
+void Speaker::stop() {
+	player.pause();
+
+}
+
+void Speaker::state() {
+	Serial.println(player.readState());
+}
+
+void Speaker::files() {
+	Serial.println(player.readFileCounts());
 }
