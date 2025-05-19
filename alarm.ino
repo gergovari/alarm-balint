@@ -12,8 +12,9 @@
 /* TODO:
 	- input (did it work? I don't remember...)
 
-	- screen
-	- menu system
+	- pick time screen
+	- countdown screen
+	- quiz screen
 
 	- quiz generator
 	- quiz menu
